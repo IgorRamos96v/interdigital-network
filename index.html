@@ -7,6 +7,23 @@
   <title>Interdigital Network LTDA | Web Design & Soluções Digitais</title>
 
   <style>
+    /* =========================
+       VARIÁVEIS DE CORES & TEMA
+    ========================== */
+    :root {
+      --bg-dark: #07090e;
+      --bg-card: #0e1320;
+      --border-color: #1b2436;
+      --border-highlight: #00f0ff;
+      
+      --primary-cyan: #00f0ff;
+      --secondary-blue: #0066ff;
+      --gradient-brand: linear-gradient(135deg, #00f0ff 0%, #0066ff 100%);
+      
+      --text-white: #ffffff;
+      --text-muted: #94a3b8;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -16,8 +33,8 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: #08080c;
-      color: #fff;
+      background: var(--bg-dark);
+      color: var(--text-white);
       line-height: 1.6;
     }
 
@@ -36,22 +53,33 @@
       justify-content: space-between;
       align-items: center;
 
-      padding: 18px 7%;
+      padding: 14px 7%;
 
-      background: rgba(8, 8, 12, 0.88);
+      background: rgba(7, 9, 14, 0.88);
       backdrop-filter: blur(15px);
 
-      border-bottom: 1px solid #252530;
+      border-bottom: 1px solid var(--border-color);
     }
 
     .logo {
-      font-size: 21px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      font-size: 20px;
       font-weight: 800;
-      color: #fff;
+      color: var(--text-white);
     }
 
-    .logo span {
-      color: #7c3aed;
+    .logo img {
+      height: 42px;
+      width: auto;
+      border-radius: 6px;
+      object-fit: contain;
+    }
+
+    .logo span span {
+      color: var(--primary-cyan);
     }
 
     nav ul {
@@ -61,14 +89,14 @@
     }
 
     nav ul li a {
-      color: #ddd;
+      color: #cbd5e1;
       text-decoration: none;
       font-size: 14px;
       transition: .3s;
     }
 
     nav ul li a:hover {
-      color: #a78bfa;
+      color: var(--primary-cyan);
     }
 
     /* =========================
@@ -83,14 +111,14 @@
       justify-content: center;
 
       text-align: center;
-      padding: 120px 20px 60px;
+      padding: 130px 20px 60px;
 
       background:
         radial-gradient(
-          circle at 50% 10%,
-          #4c1d95 0%,
-          #171323 25%,
-          #08080c 65%
+          circle at 50% 15%,
+          #003865 0%,
+          #0a1428 35%,
+          var(--bg-dark) 75%
         );
     }
 
@@ -101,14 +129,16 @@
     .tag {
       display: inline-block;
 
-      padding: 8px 17px;
+      padding: 8px 18px;
 
-      border: 1px solid #7c3aed;
+      border: 1px solid var(--primary-cyan);
       border-radius: 30px;
 
-      color: #c4b5fd;
+      background: rgba(0, 240, 255, 0.06);
+      color: var(--primary-cyan);
       font-size: 13px;
       font-weight: bold;
+      letter-spacing: 0.5px;
 
       margin-bottom: 25px;
     }
@@ -117,14 +147,17 @@
       font-size: clamp(45px, 8vw, 82px);
       line-height: 1.05;
       margin-bottom: 25px;
+      font-weight: 800;
     }
 
     .hero h1 span {
-      color: #8b5cf6;
+      background: var(--gradient-brand);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .hero p {
-      color: #aaa;
+      color: var(--text-muted);
       font-size: 18px;
       max-width: 680px;
       margin: auto;
@@ -149,22 +182,25 @@
     }
 
     .btn-primary {
-      background: #7c3aed;
-      color: white;
+      background: var(--gradient-brand);
+      color: #040914;
+      box-shadow: 0 4px 20px rgba(0, 240, 255, 0.25);
     }
 
     .btn-primary:hover {
-      background: #8b5cf6;
+      box-shadow: 0 6px 28px rgba(0, 240, 255, 0.45);
       transform: translateY(-4px);
     }
 
     .btn-secondary {
-      border: 1px solid #3b3b48;
-      color: white;
+      border: 1px solid var(--border-color);
+      background: rgba(255, 255, 255, 0.02);
+      color: var(--text-white);
     }
 
     .btn-secondary:hover {
-      border-color: #8b5cf6;
+      border-color: var(--primary-cyan);
+      color: var(--primary-cyan);
       transform: translateY(-4px);
     }
 
@@ -184,10 +220,11 @@
     }
 
     .section-title span {
-      color: #8b5cf6;
+      color: var(--primary-cyan);
       font-size: 13px;
       font-weight: bold;
       text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
     .section-title h2 {
@@ -196,7 +233,7 @@
     }
 
     .section-title p {
-      color: #999;
+      color: var(--text-muted);
     }
 
     /* =========================
@@ -212,20 +249,20 @@
     .about-box {
       padding: 35px;
 
-      background: #101016;
+      background: var(--bg-card);
 
-      border: 1px solid #282832;
+      border: 1px solid var(--border-color);
       border-radius: 22px;
     }
 
     .about-box h3 {
       font-size: 25px;
       margin-bottom: 15px;
-      color: #c4b5fd;
+      color: var(--primary-cyan);
     }
 
     .about-box p {
-      color: #aaa;
+      color: var(--text-muted);
     }
 
     /* =========================
@@ -241,9 +278,9 @@
     .service {
       padding: 30px;
 
-      background: #101016;
+      background: var(--bg-card);
 
-      border: 1px solid #282832;
+      border: 1px solid var(--border-color);
       border-radius: 20px;
 
       transition: .3s;
@@ -251,7 +288,8 @@
 
     .service:hover {
       transform: translateY(-8px);
-      border-color: #7c3aed;
+      border-color: var(--primary-cyan);
+      box-shadow: 0 10px 30px rgba(0, 240, 255, 0.1);
     }
 
     .service-icon {
@@ -264,7 +302,7 @@
     }
 
     .service p {
-      color: #999;
+      color: var(--text-muted);
       font-size: 15px;
     }
 
@@ -279,9 +317,9 @@
     }
 
     .project {
-      background: #101016;
+      background: var(--bg-card);
 
-      border: 1px solid #292934;
+      border: 1px solid var(--border-color);
       border-radius: 22px;
 
       overflow: hidden;
@@ -291,10 +329,9 @@
 
     .project:hover {
       transform: translateY(-7px);
-      border-color: #7c3aed;
+      border-color: var(--primary-cyan);
+      box-shadow: 0 10px 30px rgba(0, 240, 255, 0.1);
     }
-
-    /* IMAGEM DO PROJETO */
 
     .project-image {
       height: 270px;
@@ -303,7 +340,7 @@
       align-items: center;
       justify-content: center;
 
-      background: #181820;
+      background: #090e18;
 
       overflow: hidden;
     }
@@ -338,8 +375,8 @@
       background:
         radial-gradient(
           circle at center,
-          #31205c,
-          #14141b 70%
+          #002b4d,
+          #0a0f1a 75%
         );
     }
 
@@ -353,7 +390,7 @@
       margin-top: 10px;
 
       font-size: 14px;
-      color: #aaa;
+      color: var(--text-muted);
     }
 
     .project-info {
@@ -361,10 +398,11 @@
     }
 
     .project-category {
-      color: #8b5cf6;
+      color: var(--primary-cyan);
       font-size: 12px;
       font-weight: bold;
       text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
 
     .project-info h3 {
@@ -373,7 +411,7 @@
     }
 
     .project-info p {
-      color: #999;
+      color: var(--text-muted);
       font-size: 14px;
     }
 
@@ -382,15 +420,18 @@
 
       margin-top: 18px;
 
-      color: #c4b5fd;
+      color: var(--primary-cyan);
       text-decoration: none;
 
       font-size: 14px;
       font-weight: bold;
+
+      transition: .3s;
     }
 
     .project-btn:hover {
-      color: white;
+      color: var(--text-white);
+      transform: translateX(4px);
     }
 
     /* =========================
@@ -407,11 +448,11 @@
       background:
         radial-gradient(
           circle at top,
-          #352066,
-          #111117 65%
+          #002b4d,
+          #090d18 70%
         );
 
-      border: 1px solid #302641;
+      border: 1px solid var(--border-color);
     }
 
     .contact-box h2 {
@@ -420,7 +461,7 @@
     }
 
     .contact-box p {
-      color: #aaa;
+      color: var(--text-muted);
       max-width: 650px;
       margin: auto;
     }
@@ -438,14 +479,14 @@
 
       padding: 35px 20px;
 
-      border-top: 1px solid #22222c;
+      border-top: 1px solid var(--border-color);
 
-      color: #777;
+      color: #64748b;
       font-size: 14px;
     }
 
     footer strong {
-      color: #aaa;
+      color: var(--text-muted);
     }
 
     /* =========================
@@ -494,9 +535,11 @@
 
   <nav>
 
-    <div class="logo">
-      Interdigital <span>Network</span>
-    </div>
+    <a href="#inicio" class="logo">
+      <!-- Certifique-se de salvar a imagem da logo na mesma pasta como 'logo.jpg' ou alterar o src abaixo -->
+      <img src="logo.jpg" alt="Logo Interdigital Network">
+      <span>Interdigital <span>Network</span></span>
+    </a>
 
     <ul>
 
@@ -794,13 +837,6 @@
 
         <div class="project-image">
 
-          <!--
-            TROQUE O BLOCO ABAIXO POR:
-
-            <img src="imagens/site-empresa.jpg"
-                 alt="Site empresarial">
-          -->
-
           <div class="placeholder">
 
             <div class="placeholder-content">
@@ -847,11 +883,6 @@
       <article class="project">
 
         <div class="project-image">
-
-          <!--
-            <img src="imagens/banner.jpg"
-                 alt="Banner empresarial">
-          -->
 
           <div class="placeholder">
 
@@ -900,11 +931,6 @@
 
         <div class="project-image">
 
-          <!--
-            <img src="imagens/casamento.jpg"
-                 alt="Convite de casamento">
-          -->
-
           <div class="placeholder">
 
             <div class="placeholder-content">
@@ -952,11 +978,6 @@
 
         <div class="project-image">
 
-          <!--
-            <img src="imagens/aniversario.jpg"
-                 alt="Convite de aniversário">
-          -->
-
           <div class="placeholder">
 
             <div class="placeholder-content">
@@ -1003,11 +1024,6 @@
       <article class="project">
 
         <div class="project-image">
-
-          <!--
-            <img src="imagens/landing-page.jpg"
-                 alt="Landing page">
-          -->
 
           <div class="placeholder">
 
@@ -1123,10 +1139,8 @@
 
       <div class="contact-buttons">
 
-        <!-- ALTERE OS LINKS -->
-
         <a
-          href="https://www.instagram.com/igor.ramos1996?stkn=a3AxejYxZHRmdjBz"
+          href="https://www.instagram.com/igor.ramos1996"
           target="_blank"
           class="btn btn-primary">
 
@@ -1151,27 +1165,4 @@
   </section>
 
 
-  <!-- =========================
-       FOOTER
-  ========================== -->
-
-  <footer>
-
-    <strong>
-      Interdigital Network LTDA
-    </strong>
-
-    <br>
-
-    Web Design • Desenvolvimento Web • Design Digital
-
-    <br><br>
-
-    © 2026 Interdigital Network LTDA.
-    Todos os direitos reservados.
-
-  </footer>
-
-
-</body>
-</html>
+  <!
